@@ -1,6 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function Contact() {
+  const [status, setStatus] = useState("idle");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const data = new FormData(form);
+
+    setStatus("sending");
+
+    const response = await fetch("https://formspree.io/f/mzzknykl", {
+      method: "POST",
+      body: data,
+      headers: {
+        Accept: "application/json",
+      },
+    });
+
+    if (response.ok) {
+      setStatus("sent");
+      form.reset();
+    } else {
+      setStatus("error");
+    }
+  };
+
   return (
     <section className="min-h-screen flex flex-col items-center justify-center bg-white px-6 py-12">
       <div className="max-w-2xl w-full">
@@ -9,7 +34,10 @@ export default function Contact() {
           Have a question, collaboration idea, or just want to say hello? Fill out the form below and I’ll get back to you soon.
         </p>
 
-        <form className="bg-gray-50 p-8 rounded-2xl shadow-md space-y-6">
+        <form
+          onSubmit={handleSubmit}
+          className="bg-gray-50 p-8 rounded-2xl shadow-md space-y-6"
+        >
           <div>
             <label htmlFor="name" className="block text-gray-700 font-medium mb-2">
               Name
@@ -54,10 +82,22 @@ export default function Contact() {
 
           <button
             type="submit"
-            className="w-full bg-gray-800 text-white font-medium py-2 rounded-lg hover:bg-gray-700 transition-all"
+            disabled={status === "sending"}
+            className="w-full bg-gray-800 text-white font-medium py-2 rounded-lg hover:bg-gray-700 transition-all disabled:opacity-60"
           >
-            Send Message
+            {status === "sending" ? "Sending..." : "Send Message"}
           </button>
+
+          {status === "sent" && (
+            <p className="text-green-600 text-center mt-4">
+              I have recieved you form, will reply soon!
+            </p>
+          )}
+          {status === "error" && (
+            <p className="text-red-600 text-center mt-4">
+              The form got lost somewhere, please try again later :(
+            </p>
+          )}
         </form>
       </div>
     </section>

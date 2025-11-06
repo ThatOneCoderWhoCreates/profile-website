@@ -3,6 +3,12 @@ import React from "react";
 export default function Projects() {
   const projects = [
     {
+      title: "Advanced Keylogger",
+      description:
+        "A project that shows the actual usecase and logic behind developing a keylogger and the social engineering aspect of it.",
+      link: "https://github.com/ThatOneCoderWhoCreates/keylogger-ftp-server",
+    },
+    {
       title: "Secure Password Manager",
       description:
         "A password storage system using SHA-256 encryption to securely store and verify user credentials.",
@@ -13,12 +19,6 @@ export default function Projects() {
       description:
         "A React-based app that allows users to share their travel experiences, with Firebase integration for image storage.",
       link: "https://github.com/yourusername/travel-journal",
-    },
-    {
-      title: "Advanced Keylogger",
-      description:
-        "A project that shows the actual usecase and logic behind developing a keylogger and the social engineering aspect of it.",
-      link: "https://github.com/ThatOneCoderWhoCreates/keylogger-ftp-server",
     },
     {
       title: "Sustainable Packaging Website",
