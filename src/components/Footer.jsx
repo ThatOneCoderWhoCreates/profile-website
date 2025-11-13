@@ -53,7 +53,7 @@ export default function Footer() {
 
         {/* Divider */}
         <div className="border-t border-gray-300 mt-8 pt-6 text-center text-sm text-gray-500">
-          © {new Date().getFullYear()} Tanmay Gautam. All rights reserved.
+          © {new Date().getFullYear()} Tanmay Gautam. Designed and developed by me.
         </div>
       </div>
     </footer>

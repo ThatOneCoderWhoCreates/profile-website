@@ -7,6 +7,7 @@ import About from "./components/aboutme";
 import Contact from "./components/contact";
 import Project from "./components/projects"
 import Blog from "./components/blogs";
+import Achievement from "./components/achievements";
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
             />
             <Route path="/aboutme" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/achievement" element={<Achievement />} />
             <Route path="/projects" element={<Project />} />
             <Route path="/blogs" element={<Blog />} />
           </Routes>
