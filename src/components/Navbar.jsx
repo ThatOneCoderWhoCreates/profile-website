@@ -33,6 +33,7 @@ const Navbar = () => {
             <li><a href="/" className="hover:text-pink-500" onClick={() => setIsOpen(false)}>Home</a></li>
             <li><a href="/aboutme" className="hover:text-pink-500" onClick={() => setIsOpen(false)}>About</a></li>
             <li><a href="/projects" className="hover:text-pink-500" onClick={() => setIsOpen(false)}>Projects</a></li>
+            <li><a href="/achievement" className="hover:text-pink-500" onClick={() => setIsOpen(false)}>Achievements</a></li>
             <li><a href="/blogs" className="hover:text-pink-500" onClick={() => setIsOpen(false)}>Blogs</a></li>
             <li><a href="/contact" className="hover:text-pink-500" onClick={() => setIsOpen(false)}>Contact</a></li>
           </ul>
